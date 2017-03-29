@@ -1,0 +1,47 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:56.78
+
+Line
+   1  
+   2  -- Author:              A. Ireland
+   3  --
+   4  -- Address:             School Mathematical & Computer Sciences
+   5  --                      Heriot-Watt University
+   6  --                      Edinburgh, EH14 4AS
+   7  --
+   8  -- E-mail:              a.ireland@hw.ac.uk
+   9  --
+  10  -- Last modified:       25/9/2013 
+  11  --
+  12  -- Filename:            speedo.ads
+  13  --
+  14  -- Description:         Models the speedo device associated with the ATP system.
+  15  
+  16  package Speedo
+  17     --# own Speed;
+  18     --# initializes Speed;
+  19  is
+  20  
+  21     subtype Speed_Type is Integer range 0..150;
+  22  
+  23     procedure Write_Speed(S: in Speed_Type);
+  24     --# global out Speed;
+  25     --# derives Speed from S;
+  26  
+  27     function Read_Speed return Speed_Type;
+  28     --# global in Speed;
+  29  
+  30  end Speedo;
+  31  
+  32  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

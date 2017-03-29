@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="title">Aisha Quiz</string>
+	<string name="app_name">Quiz</string>
+	<string name="history">Database</string>
+	<string name="lifescience">Networking Technology</string>
+	<string name="maths">Maths</string>
+	<string name="hello">MultiChoiceQuestionsActivity</string>
+	<string name="submit">Submit</string>
+	<string name="maths_question_title">What is the answer to this question?</string>
+	<string name="numeric">Numeric questions</string>
+	<string name="maths_answer_text">Check</string>
+</resources>

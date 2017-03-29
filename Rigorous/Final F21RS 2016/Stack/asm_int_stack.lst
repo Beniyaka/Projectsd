@@ -1,0 +1,87 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 13-OCT-2016 13:57:00.63
+
+Line
+   1  
+   2  package body ASM_Int_Stack
+   3    --# own State is Data, Pointer;
+   4  is
+   5     Stack_Size: constant:=4;
+   6     type Pointer_Range is range 0..Stack_Size;
+   7     subtype Index_Range is Pointer_Range range 1..Stack_Size;
+   8     type Vector is array(Index_Range) of Integer;
+   9     Data: Vector;
+  10     Pointer: Pointer_Range;
+  11  
+  12     function Full return Boolean
+  13        --# global in Pointer;
+  14     is
+  15     begin
+  16        return Pointer = Stack_Size;
+  17     end Full;
+
++++        Flow analysis of subprogram Full performed 
+           (information-flow mode): no errors found.
+
+  18  
+  19     procedure Push(X: in Integer)
+  20       --# global in out Data, Pointer;
+  21       --# derives Data from X, Data, Pointer &
+  22       --#         Pointer from Pointer;
+  23     is
+  24     begin
+  25        Pointer:= Pointer + 1;
+  26        Data(Pointer):= X;
+  27     end Push;
+
++++        Flow analysis of subprogram Push performed 
+           (information-flow mode): no errors found.
+
+  28  
+  29     function Empty return Boolean
+  30     --# global in Pointer;
+  31     is
+  32     begin
+  33  	return Pointer = 0;
+  34     end Empty;
+
++++        Flow analysis of subprogram Empty performed 
+           (information-flow mode): no errors found.
+
+  35  
+  36     procedure Pop(AValue: out Integer)
+  37  	--# global in Data;
+  38  	--# 	   in out Pointer;
+  39  	--# derives Pointer from Pointer &
+  40  	--#	    AValue from Data, Pointer;
+  41     is
+  42     begin
+  43  	AValue := Data(Pointer);
+  44  	Pointer := Pointer - 1;
+  45     end Pop;
+
++++        Flow analysis of subprogram Pop performed 
+           (information-flow mode): no errors found.
+
+  46  
+  47  begin
+  48     Pointer:= 0;
+  49     Data:= Vector'(Index_Range => 0);
+  50  end ASM_Int_Stack;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+  51  
+  52  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

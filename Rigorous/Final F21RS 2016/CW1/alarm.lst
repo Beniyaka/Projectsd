@@ -1,0 +1,55 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 04:14:21.52
+
+Line
+   1  package body Alarm
+   2  is
+   3  	State: Boolean;
+   4  
+   5  	procedure Enable
+   6  	is
+   7  	begin
+   8  		State := true;
+   9  	end Enable;
+
++++        Flow analysis of subprogram Enable performed 
+           (information-flow mode): no errors found.
+
+  10  
+  11  	procedure Disable
+  12  	is
+  13  	begin
+  14  		State := false;
+  15  	end Disable;
+
++++        Flow analysis of subprogram Disable performed 
+           (information-flow mode): no errors found.
+
+  16  
+  17  	function Enabled return Boolean
+  18  	is
+  19  	begin
+  20  		return State;
+  21  	end Enabled;
+
++++        Flow analysis of subprogram Enabled performed 
+           (information-flow mode): no errors found.
+
+  22  begin
+  23  	State := false;
+  24  end Alarm;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

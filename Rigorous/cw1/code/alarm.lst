@@ -1,0 +1,54 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 10:40:34.47
+
+Line
+   1  --# inherit Console;
+                  ^1
+*** (  1)  Semantic Error    :135: The package Console is undeclared or not 
+           visible, or there is a circularity in the list of inherited packages.
+--- (  2)  Warning           :430: SLI generation abandoned owing to syntax or 
+           semantic errors or multiple units in a single source file.
+
+   2  package Alarm
+   3     --# own State;
+   4     --# initializes State;
+   5  is
+   6     procedure Enable;
+   7     --# global in out Console.Alarm_Cnt;
+                           ^3
+*** (  3)  Semantic Error    :144: The dotted name Console is either undeclared or 
+           not visible at this point.
+
+   8     --#  out State;
+   9     --# derives State from & Console.Alarm_Cnt from Console.Alarm_Cnt;
+                                  ^4                     ^5
+*** (  4)  Semantic Error    :753: The identifier Console is either undeclared or 
+           not visible at this point. This identifier must appear in a 
+           preceding legal global annotation or formal parameter list.
+*** (  5)  Semantic Error    :752: The identifier Console is either undeclared or 
+           not visible at this point. This identifier must appear in a 
+           preceding legal global annotation or formal parameter list.
+
+  10  
+  11  
+  12     procedure Disable;
+  13     --# global out State;
+  14     --# derives State from ;
+  15  
+  16     function Enabled return Boolean;
+  17     --# global in State;
+  18  
+  19  end Alarm;
+  20  
+  21  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

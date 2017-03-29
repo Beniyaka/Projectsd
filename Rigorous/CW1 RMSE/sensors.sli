@@ -1,0 +1,48 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -vcg
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Downloads\CW1 RMSE\
+P
+R
+
+U Sensors%b sensors.adb
+U Sensors%s sensors.ads
+
+D sensors.ads 00000000000000 00000000
+D sensors.adb 00000000000000 00000000
+
+X 1 sensors.ads
+19H12 State 27m16 20r20 26r19 30r18 33r18 2|2c9
+22n51 Undef 2|36r147
+25U14 Write_Sensors 26<19 2|15=20
+25e28 Value_1 27r27 2|16r26
+25e37 Value_2 27r36 2|16r35
+25e46 Value_3 27r45 2|16r44
+29V13 Read_Sensor 30>18 2|28>16
+32V13 Read_Sensor_Majority 33>18 2|35>16
+X 2 sensors.adb
+8a4 Data 36r33 36r51 36r70 36r88 36r107 36r125 37r14 37r31 37r59
+. 38r14 38r31 38r59 39r14 39r31 39r59
+11r2 AStack 16m14 2o18 15r20 16r53 28r16 35r16 36r26 36r44 36r63
+. 36r81 36r100 36r118 37r7 37r24 37r52 38r7 38r24 38r52 39r7 39r24
+. 39r52
+36e13 AResult 36r137 37r42 38r42 39r42

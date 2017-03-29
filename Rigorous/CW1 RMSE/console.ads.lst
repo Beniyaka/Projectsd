@@ -1,0 +1,65 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:01.87
+
+Line
+   1  
+   2  -- Author:              A. Ireland
+   3  --
+   4  -- Address:             School Mathematical & Computer Sciences
+   5  --                      Heriot-Watt University
+   6  --                      Edinburgh, EH14 4AS
+   7  --
+   8  -- E-mail:              a.ireland@hw.ac.uk
+   9  --
+  10  -- Last modified:       25/9/2013 
+  11  --
+  12  -- Filename:            reset.adb
+  13  --
+  14  -- Description:         Models the console associated with the ATP system, i.e. 
+  15  --                      the reset mechanism that is required to disable the 
+  16  --                      trains's braking system, as well as a SPAD count. 
+  17  
+  18  --# inherit Brakes, Alarm;
+  19  package  Console
+  20    --# own Reset_Status, SPAD_Cnt;
+  21    --# initializes Reset_Status, SPAD_Cnt;
+  22  is
+  23     --subtype introduced to specify the range of SPAD counter. SPAD counter > 0 and < 2**31-1
+  24     subtype SPAD_Cnt_SubType is Integer range 0..Integer'Last;
+  25        
+  26     procedure Enable_Reset;
+  27        --# global out Reset_Status;
+  28        --# derives Reset_Status from ;
+  29        
+  30     procedure Disable_Reset;
+  31       --# global out Reset_Status;
+  32       --# derives Reset_Status from ;  
+  33  
+  34     function Reset_Enabled return Boolean;
+  35       --# global in Reset_Status;  
+  36     
+  37     procedure Inc_SPAD_Cnt;
+  38       --# global in out SPAD_Cnt;
+  39       --# derives SPAD_Cnt from SPAD_Cnt;
+  40       
+  41     procedure Reset_SPAD_Cnt;
+  42        --# global out SPAD_Cnt;
+  43        --# derives SPAD_Cnt from ;
+  44          
+  45     function SPAD_Cnt_Value return Integer;
+  46        --# global in SPAD_Cnt;
+  47     
+  48  end Console;
+  49  
+  50  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

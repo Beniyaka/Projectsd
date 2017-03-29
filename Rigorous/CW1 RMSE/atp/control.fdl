@@ -1,0 +1,49 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2012}
+             {Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 20-OCT-2016 01:39:02.60}
+
+                           {procedure ATP.Control}
+
+
+title procedure control;
+
+  function round__(real) : integer;
+  type sensors__state__type = pending;
+  type sensors__sensor_type = (sensors__proceed, sensors__caution, 
+     sensors__danger, sensors__undef);
+  type speedo__speed__type = pending;
+  type speedo__speed_type = integer;
+  type brakes__state__type = pending;
+  type alarm__state__type = pending;
+  const speedo__speed_type__base__first : integer = pending; 
+  const speedo__speed_type__base__last : integer = pending; 
+  const sensors__sensor_type__base__first : sensors__sensor_type = pending; 
+  const sensors__sensor_type__base__last : sensors__sensor_type = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const speedo__speed_type__first : integer = pending; 
+  const speedo__speed_type__last : integer = pending; 
+  const speedo__speed_type__size : integer = pending; 
+  const sensors__sensor_type__first : sensors__sensor_type = pending; 
+  const sensors__sensor_type__last : sensors__sensor_type = pending; 
+  const sensors__sensor_type__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var sensors__state : sensors__state__type;
+  var speedo__speed : speedo__speed__type;
+  var brakes__state : brakes__state__type;
+  var alarm__state : alarm__state__type;
+  var train_speed_temp_memory : integer;
+  function sensors__read_sensor_majority(sensors__state__type) : 
+     sensors__sensor_type;
+  function speedo__read_speed(speedo__speed__type) : integer;
+  function brakes__activated(brakes__state__type) : boolean;
+  function alarm__enabled(alarm__state__type) : boolean;
+
+end;

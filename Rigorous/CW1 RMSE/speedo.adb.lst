@@ -1,0 +1,46 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:56.94
+
+Line
+   1  package body Speedo
+   2  is
+   3  	Speed: Speed_Type;
+   4  	
+   5  	procedure Write_Speed(S: in Speed_Type)
+   6  	is
+   7  	begin
+   8  		Speed := S;
+   9  	end Write_Speed;
+
++++        Flow analysis of subprogram Write_Speed 
+           performed (information-flow mode): no errors found.
+
+  10  
+  11  	function Read_Speed return Speed_Type
+  12  	is
+  13  	begin
+  14  		return Speed;
+  15  	end Read_Speed;
+
++++        Flow analysis of subprogram Read_Speed performed 
+           (information-flow mode): no errors found.
+
+  16  	
+  17  	begin
+  18  		Speed := 0;
+  19  end Speedo;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

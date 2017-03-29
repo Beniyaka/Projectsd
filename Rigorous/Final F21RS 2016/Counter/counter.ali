@@ -1,0 +1,21 @@
+V "GNAT Lib v2012"
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnn
+
+U counter%b		counter.adb		c6bb28f3 OO PK IL
+
+U counter%s		counter.ads		6ebb7136 EE NE OO PK IL
+
+D counter.ads		20161013103920 6ebb7136
+D counter.adb		20161013103908 a80059c5
+D system.ads		20120510125846 6daf90c4
+X 1 counter.ads
+1K9*counter 17l5 17e12 2|1b14 28l5 28t12
+5U19*Increment 2|5b19 8l13 8t22
+8U19*Decrement 2|10b19 13l13 13t22
+11V18*Value{integer} 2|15b18 18l13 18t18
+14U19*Reset 14>25 2|20b19 23l13 23t18
+14i25 AValue{integer} 2|20b25 22r31
+X 2 counter.adb
+3i9 my_counter{integer} 7m17 7r31 12m17 12r31 17r24 22m17 26m9
+

@@ -1,0 +1,320 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:02.60
+
+                           procedure ATP.Control
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 12:
+
+procedure_control_1.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+        ->
+C1:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+C2:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 37:
+
+procedure_control_2.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   sensors__read_sensor_majority(sensors__state) = 
+           sensors__proceed .
+H12:   true .
+H13:   alarm__enabled(alarm__state) .
+H14:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H15:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_3.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   sensors__read_sensor_majority(sensors__state) = 
+           sensors__proceed .
+H12:   true .
+H13:   not (alarm__enabled(alarm__state)) .
+H14:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H15:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_4.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   sensors__read_sensor_majority(sensors__state) = 
+           sensors__caution .
+H12:   true .
+H13:   alarm__enabled(alarm__state) .
+H14:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H15:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+H16:   speedo__read_speed(speedo__speed) >= 
+           train_speed_temp_memory .
+H17:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H18:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_5.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   sensors__read_sensor_majority(sensors__state) = 
+           sensors__caution .
+H12:   true .
+H13:   alarm__enabled(alarm__state) .
+H14:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H15:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+H16:   not (speedo__read_speed(speedo__speed) >= 
+           train_speed_temp_memory) .
+H17:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H18:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_6.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   sensors__read_sensor_majority(sensors__state) = 
+           sensors__caution .
+H12:   true .
+H13:   not (alarm__enabled(alarm__state)) .
+H14:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H15:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_7.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   sensors__read_sensor_majority(sensors__state) = 
+           sensors__danger .
+H12:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H13:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_8.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (brakes__activated(brakes__state)) .
+H5:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H6:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H7:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H8:    sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H9:    sensors__read_sensor_majority(sensors__state) >= 
+           sensors__sensor_type__first .
+H10:   sensors__read_sensor_majority(sensors__state) <= 
+           sensors__sensor_type__last .
+H11:   not (sensors__read_sensor_majority(sensors__state) = 
+           sensors__proceed) .
+H12:   not (sensors__read_sensor_majority(sensors__state) = 
+           sensors__caution) .
+H13:   not (sensors__read_sensor_majority(sensors__state) = 
+           sensors__danger) .
+H14:   speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H15:   speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+procedure_control_9.
+H1:    train_speed_temp_memory >= speedo__speed_type__first .
+H2:    train_speed_temp_memory <= speedo__speed_type__last .
+H3:    true .
+H4:    not (not (brakes__activated(brakes__state))) .
+H5:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+H6:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+        ->
+C1:    speedo__read_speed(speedo__speed) >= 
+           speedo__speed_type__first .
+C2:    speedo__read_speed(speedo__speed) <= 
+           speedo__speed_type__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_control_10.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_11.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_12.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_13.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_14.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_15.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_16.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_control_17.
+*** true .          /* trivially true VC removed by Examiner */
+
+

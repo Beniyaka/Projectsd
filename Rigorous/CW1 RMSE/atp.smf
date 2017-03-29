@@ -1,0 +1,12 @@
+sensors.ads -l =sensors.ads.lst
+sensors.adb -l =sensors.adb.lst
+speedo.ads -l =speedo.ads.lst
+speedo.adb -l =speedo.adb.lst
+brakes.ads -l =brakes.ads.lst
+brakes.adb -l =brakes.adb.lst
+alarm.ads -l =alarm.ads.lst
+alarm.adb -l =alarm.adb.lst
+console.ads -l =console.ads.lst
+console.adb -l =console.adb.lst
+atp.ads -l =atp.ads.lst
+atp.adb -l =atp.adb.lst

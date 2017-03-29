@@ -1,0 +1,32 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2012*/
+             /*Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 20-OCT-2016 01:39:02.33*/
+
+                       /*procedure Console.Inc_SPAD_Cnt*/
+
+
+rule_family inc_spad_cnt_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+inc_spad_cnt_rules(1): integer__size >= 0 may_be_deduced.
+inc_spad_cnt_rules(2): integer__first <= integer__last may_be_deduced.
+inc_spad_cnt_rules(3): integer__base__first <= integer__base__last may_be_deduced.
+inc_spad_cnt_rules(4): integer__base__first <= integer__first may_be_deduced.
+inc_spad_cnt_rules(5): integer__base__last >= integer__last may_be_deduced.
+inc_spad_cnt_rules(6): spad_cnt_subtype__size >= 0 may_be_deduced.
+inc_spad_cnt_rules(7): spad_cnt_subtype__first may_be_replaced_by 0.
+inc_spad_cnt_rules(8): spad_cnt_subtype__first <= 
+     spad_cnt_subtype__last may_be_deduced.
+inc_spad_cnt_rules(9): spad_cnt_subtype__base__first <= 
+     spad_cnt_subtype__base__last may_be_deduced.
+inc_spad_cnt_rules(10): spad_cnt_subtype__base__first <= 
+     spad_cnt_subtype__first may_be_deduced.
+inc_spad_cnt_rules(11): spad_cnt_subtype__base__last >= 
+     spad_cnt_subtype__last may_be_deduced.

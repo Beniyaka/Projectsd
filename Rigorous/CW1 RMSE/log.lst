@@ -1,0 +1,101 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:17:02.99
+
+Line
+   1  
+   2  -- Author:              A. Ireland
+   3  --
+   4  -- Address:             School Mathematical & Computer Sciences
+   5  --                      Heriot-Watt University
+   6  --                      Edinburgh, EH14 4AS
+   7  --
+   8  -- E-mail:              a.ireland@hw.ac.uk
+   9  --
+  10  -- Last modified:       18/10/2002
+  11  --
+  12  -- Filename:            log.adb
+  13  --
+  14  -- Description:         Provides logger that records state information on the
+  15  --                      component parts of the ATP system at run-time.
+  16  
+  17  with Text_IO, Sensors, Speedo, Alarm, Brakes, Console;
+  18  use type Sensors.Sensor_Type;
+  19  package body Log is
+  20  
+  21     package Sensor_INOUT is new Text_IO.Enumeration_IO(Sensors.Sensor_Type);
+                                            ^1                                  ^2
+*** (  1)  Syntax Error      : ";" or start of GENERIC_ACTUAL_PART expected.
+*** (  2)  Syntax Error      : No complete POSITIONAL_ARGUMENT_ASSOCIATION can 
+           be followed by ";" here.
+
+  22     -- use Sensor_INOUT;
+  23     package Integer_INOUT is new Text_IO.Integer_IO(Integer);
+                                  ^3
+*** (  3)  Syntax Error      : No complete VISIBLE_PART_REP can be followed by 
+           reserved word "NEW" here.
+
+  24     -- use Integer_INOUT;
+  25  
+  26     Log_File: Text_IO.File_Type;
+  27  
+  28     procedure Update is
+                   ^4
+*** (  4)  Syntax Error      : SIMPLE_NAME expected.
+
+  29     begin
+  30        Sensor_INOUT.Put(Log_File, Sensors.Read_Sensor(1), 10);
+  31        Sensor_INOUT.Put(Log_File, Sensors.Read_Sensor(2), 10);
+  32        Sensor_INOUT.Put(Log_File, Sensors.Read_Sensor(3), 10);
+  33        Sensor_INOUT.Put(Log_File, Sensors.Read_Sensor_Majority, 10);
+  34        Integer_INOUT.Put(Log_File, Speedo.Read_Speed, 2);
+  35        if Alarm.Enabled then
+  36           Text_IO.Put(Log_File, "     ON   ");
+  37        else
+  38           Text_IO.Put(Log_File, "     --   ");
+  39        end if;
+  40        if Brakes.Activated then
+  41           Text_IO.Put(Log_File, "  ON    ");
+  42        else
+  43           Text_IO.Put(Log_File, "  --    ");
+  44        end if;
+  45        if Console.Reset_Enabled then
+  46           Text_IO.Put(Log_File, "  ON ");
+  47        else
+  48           Text_IO.Put(Log_File, "  -- ");
+  49        end if;
+  50        Integer_INOUT.Put(Log_File, Console.SPAD_Cnt_Value, 6);
+  51        Text_IO.New_Line(Log_File);
+  52     end Update;
+             ^5
+*** (  5)  Syntax Error      : No DOTTED_SIMPLE_NAME can start with 
+           PREDEFINED_FDL_IDENTIFIER.
+
+  53  
+  54     procedure Open_File is
+  55     begin
+  56        Text_IO.Create(Log_File, Text_IO.Out_File, "log.dat");
+  57        Text_IO.Put_Line(Log_File,
+  58                 "SENSOR-1  SENSOR-2  SENSOR-3  MAJORITY  SPEED  ALARM  BRAKES  RESET  SPADs");
+  59        Text_IO.Put_Line(Log_File,
+  60                 "--------  --------  --------  --------  -----  -----  ------  -----  -----");
+  61     end Open_File;
+  62  
+  63     procedure Close_File is
+  64     begin
+  65        Text_IO.Close(Log_File);
+  66     end Close_File;
+  67  
+  68  end Log;
+  69  
+  70  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

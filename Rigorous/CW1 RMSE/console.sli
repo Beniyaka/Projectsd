@@ -1,0 +1,40 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Downloads\CW1 RMSE\
+P
+R
+
+U Console%b console.adb
+U Console%s console.ads
+
+D console.ads 00000000000000 00000000
+D console.adb 00000000000000 00000000
+
+X 1 console.ads
+19H11 Reset_Status 27m19 31m18 20r19 26r22 30r21 34r20 2|4O2
+19H25 SPAD_Cnt 38m18 42m19 20r33 37r24 38r32 41r22 45r21 2|5O2 29r13
+25U14 Enable_Reset 26<22
+29U14 Disable_Reset 30<21
+33V13 Reset_Enabled 34>20
+36U14 Inc_SPAD_Cnt 37=24
+40U14 Reset_SPAD_Cnt 41<22
+44V13 SPAD_Cnt_Value 45>21

@@ -1,0 +1,85 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -vcg
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Downloads\CW1 RMSE\
+P
+R
+
+U ATP%b atp.adb
+U ATP%s atp.ads
+W Sensors%s sensors.adb sensors.sli
+W Speedo%s speedo.adb speedo.sli
+W Brakes%s brakes.adb brakes.sli
+W Alarm%s alarm.adb alarm.sli
+W Console%s console.adb console.sli
+
+D sensors.ads 00000000000000 00000000
+D speedo.ads 00000000000000 00000000
+D brakes.ads 00000000000000 00000000
+D alarm.ads 00000000000000 00000000
+D console.ads 00000000000000 00000000
+D atp.ads 00000000000000 00000000
+D atp.adb 00000000000000 00000000
+
+X 1 sensors.ads
+18K9 Sensors 6|7r16 13r31 14r24 16r46 1w13
+19H12 State 27m16 20r20 26r19 30r18 33r18 6|7r24 13r39 14r32 16r54
+25U14 Write_Sensors 26<19
+25e28 Value_1 27r27
+25e37 Value_2 27r36
+25e46 Value_3 27r45
+29V13 Read_Sensor 30>18
+32V13 Read_Sensor_Majority 33>18
+X 2 speedo.ads
+16K9 Speedo 6|10r9 14r64 15r35 1w37
+17H12 Speed 25m16 18r20 24r19 28r18 6|10r16 14r71 15r42
+23U14 Write_Speed 24<19
+23i26 S 25r27
+27V13 Read_Speed 28>18
+X 3 brakes.ads
+17K9 Brakes 5|18w13 6|14m6 8r13 13r59 14r78 16r61 1w29
+18H12 State 23m16 27m16 19r20 22r19 26r19 30r18 6|14m13 8r20 13r66
+. 14r85 16r68
+21U14 Activate 22<19
+25U14 Deactivate 26<19
+29V13 Activated 30>18
+X 4 alarm.ads
+18K9 Alarm 5|18w21 6|13m14 9r13 13r46 14r92 1w22
+19H12 State 24m16 28m16 20r20 23r19 27r19 31r18 6|13m20 9r19 13r52
+. 14r98
+22U14 Enable 23<19
+26U14 Disable 27<19
+30V13 Enabled 31>18
+X 5 console.ads
+19K10 Console 6|16m6 12r13 16r28 1w45
+20H11 Reset_Status 28m19 32m18 21r19 27r22 31r21 35r20
+20H25 SPAD_Cnt 39m18 43m19 21r33 38r24 39r32 42r22 46r21 6|16m14 12r21
+. 16r36
+26U14 Enable_Reset 27<22
+30U14 Disable_Reset 31<21
+34V13 Reset_Enabled 35>20
+37U14 Inc_SPAD_Cnt 38=24
+41U14 Reset_SPAD_Cnt 42<22
+45V13 SPAD_Cnt_Value 46>21
+X 6 atp.ads
+3H10 Train_Speed_Temp_Memory 15m6 4r18 11r13 14r39 7|5O2
+6U12 Control 8=20 9=19 11=13 12=21 7>24 10>16

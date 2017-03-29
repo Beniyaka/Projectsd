@@ -1,0 +1,91 @@
+           *******************************************************
+                         Report of SPARK Examination
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 10:40:34.48
+
+Options:
+    noswitch
+    noindex_file
+    nowarning_file
+    notarget_compiler_data
+    noconfig_file
+    source_extension=ada
+    listing_extension=lst
+    nodictionary_file
+    report_file=spark.rep
+    nohtml
+    nostatistics
+    fdl_identifiers=accept
+    flow_analysis=auto
+    language=95
+    profile=sequential
+    annotation_character=#
+    rules=lazy
+    error_explanations=off
+    justification_option=full
+    output_directory=.
+    output_directory (actual)=C:\Users\lenovo pc\Desktop\rigsys-master\cw1\code\
+
+Selected files:
+   alarm.ads
+
+
+No Index files were used
+
+
+No Meta Files used
+
+
+Full warning reporting selected
+
+
+Source Filename(s) used were:
+   C:\Users\lenovo pc\Desktop\rigsys-master\cw1\code\alarm.ads
+
+
+The following were required during analysis but could not be located:
+
+   Unit name                                     Unit type             Reason
+   ---------                                     ---------             ------
+   Console                                       package specification No index file specified.
+
+
+Source Filename:   C:\Users\lenovo pc\Desktop\rigsys-master\cw1\code\alarm.ads
+Listing Filename:  C:\Users\lenovo pc\Desktop\rigsys-master\cw1\code\alarm.lst
+
+   Unit name:  Alarm
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+5 error(s) or warning(s)
+
+Line
+   1  --# inherit Console;
+                  ^1
+*** (  1)  Semantic Error    :135: The package Console is undeclared or not visible, 
+           or there is a circularity in the list of inherited packages.
+--- (  2)  Warning           :430: SLI generation abandoned owing to syntax or 
+           semantic errors or multiple units in a single source file.
+
+   7     --# global in out Console.Alarm_Cnt;
+                           ^3
+*** (  3)  Semantic Error    :144: The dotted name Console is either undeclared or 
+           not visible at this point.
+
+   9     --# derives State from & Console.Alarm_Cnt from Console.Alarm_Cnt;
+                                  ^4                     ^5
+*** (  4)  Semantic Error    :753: The identifier Console is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** (  5)  Semantic Error    :752: The identifier Console is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+
+Note: Automatic flow analysis mode selected
+
+
+--End of file--------------------------------------------------

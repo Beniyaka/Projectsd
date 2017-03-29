@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Wise chat</title>
+   <link rel="stylesheet" href="css/style.css"/>
+   <link rel="stylesheet" href="css/Regstyle.css"/></head>
+
+
+
+<body>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script type="text/javascript">  
+$(document).ready(function(){
+	//create a new WebSocket object.
+	var wsUri = "ws://localhost:9000/server.php"; 	
+	websocket = new WebSocket(wsUri); 
+	var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
+	var result = colors[Math.floor(Math.random() * colors.length)];
+	
+	var query = window.location.search.substring(1);
+		var vars = location.search.split('username=')[1];
+		document.getElementById("name").value = vars;
+		document.getElementById("name").readOnly = true;
+		 document.getElementById("message").placeholder="Message"
+		if(vars == "" || vars == null){
+			window.location.assign('index.xhtml'); 
+		}
+	
+	websocket.onopen = function(ev) { // connection is open 
+	var div2 = document.createElement('div');
+		div2.textContent = "Connected";
+		div2.setAttribute('class', 'system_msg');
+		$('#message_box').append(div2);
+		}; 
+	
+	$('#send-btn').click(function(){ //use clicks message send button	
+		var mymessage = $('#message').val(); //get message text
+		var myname = $('#name').val(); //get user name
+		
+		if(myname == ""){ //empty name?
+			alert("Enter your Name please!");
+			return;
+		}
+		if(mymessage == ""){ //emtpy message?
+			alert("Enter Some message Please!");
+			return;
+		}
+		
+		//prepare json data
+		var msg = {
+		message: mymessage,
+		name: myname,
+		color : result
+		};
+		//convert and send data to server
+		websocket.send(JSON.stringify(msg));
+	});
+	
+	//#### Message received from server?
+	websocket.onmessage = function(ev) {
+		var msg = JSON.parse(ev.data); //PHP sends Json data
+		var type = msg.type; //message type
+		var umsg = msg.message; //message text
+		var uname = msg.name; //user name
+		var ucolor = msg.color; //color
+
+		if(type == 'usermsg') 
+		{
+			var divt = document.createElement('div');
+			var di = document.createElement('span');
+			var divs = document.createElement('span');
+
+			var k = di.innerHTML = uname;
+			var q = divs.innerHTML = umsg;
+			
+			di.className = 'user_name';
+			
+			divs.className = 'user_name';
+			divt = k + ":" + q;
+			var iDiv = document.createElement('div');
+			iDiv.style.color = ucolor;
+			iDiv.id = 'block';
+			document.getElementsByTagName('div')[1].appendChild(iDiv);
+			iDiv.innerHTML = divt;
+			// Now create and append to iDiv
+
+		//	$('#message_box').append(divt);
+			
+		}
+		if(type == 'system')
+		{
+			var div3 = document.createElement('div');
+			div3.textContent = umsg;
+			div3.setAttribute('class', 'system_msg');
+			$('#message_box').append(div3);
+		}
+		
+		$('#message').val(''); //reset text
+	};
+	
+	websocket.onerror	= function(ev){
+		var div4 = document.createElement('div');
+		div4.textContent = "Error Occurred - "+ev.data+"";
+		div4.setAttribute('class', 'system_error');
+		$('#message_box').append(div4);
+		}; 
+	websocket.onclose 	= function(ev){
+		var divs5 = document.createElement('div');
+		divs5.textContent = "Connection Closed!";
+		divs5.setAttribute('class', 'system_msg');
+		$('#message_box').append(divs5);
+		}; 
+});
+</script>
+
+<div class="chat_wrapper">
+<div class="message_box" id="message_box"></div>
+<div class="panel">
+<input type="text" name="name" id="name" maxlength="10" style="width:20%" />
+<input type="text" name="message" id="message" maxlength="80" style="width:60%" />
+<button id="send-btn"><img id="send-btn1" src="css/send.png" alt=""/></button>
+</div>
+</div>
+
+</body>
+</html>

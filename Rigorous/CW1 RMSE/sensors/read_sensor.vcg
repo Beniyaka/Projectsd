@@ -1,0 +1,60 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:56.44
+
+                        function Sensors.Read_Sensor
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 31:
+
+function_read_sensor_1.
+H1:    sensor_index >= sensor_index_type__first .
+H2:    sensor_index <= sensor_index_type__last .
+H3:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H4:    fld_pointer(astack) >= sensor_index_type__first .
+H5:    fld_pointer(astack) <= sensor_index_type__last .
+        ->
+C1:    sensor_index >= sensor_index_type__first .
+C2:    sensor_index <= sensor_index_type__last .
+ 
+
+For path(s) from start to finish:
+
+function_read_sensor_2.
+H1:    sensor_index >= sensor_index_type__first .
+H2:    sensor_index <= sensor_index_type__last .
+H3:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H4:    fld_pointer(astack) >= sensor_index_type__first .
+H5:    fld_pointer(astack) <= sensor_index_type__last .
+H6:    sensor_index >= sensor_index_type__first .
+H7:    sensor_index <= sensor_index_type__last .
+        ->
+C1:    element(fld_data(astack), [sensor_index]) >= 
+           sensor_type__first .
+C2:    element(fld_data(astack), [sensor_index]) <= 
+           sensor_type__last .
+ 
+
+For checks of refinement integrity: 
+
+function_read_sensor_3.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+function_read_sensor_4.
+*** true .          /* trivially true VC removed by Examiner */
+
+

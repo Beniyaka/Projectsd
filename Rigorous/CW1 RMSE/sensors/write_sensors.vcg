@@ -1,0 +1,396 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:56.38
+
+                      procedure Sensors.Write_Sensors
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 19:
+
+procedure_write_sensors_1.
+H1:    value_1 >= sensor_type__first .
+H2:    value_1 <= sensor_type__last .
+H3:    value_2 >= sensor_type__first .
+H4:    value_2 <= sensor_type__last .
+H5:    value_3 >= sensor_type__first .
+H6:    value_3 <= sensor_type__last .
+H7:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H8:    fld_pointer(astack) >= sensor_index_type__first .
+H9:    fld_pointer(astack) <= sensor_index_type__last .
+        ->
+C1:    1 >= sensor_index_type__first .
+C2:    1 <= sensor_index_type__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 20:
+
+procedure_write_sensors_2.
+H1:    value_1 >= sensor_type__first .
+H2:    value_1 <= sensor_type__last .
+H3:    value_2 >= sensor_type__first .
+H4:    value_2 <= sensor_type__last .
+H5:    value_3 >= sensor_type__first .
+H6:    value_3 <= sensor_type__last .
+H7:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H8:    fld_pointer(astack) >= sensor_index_type__first .
+H9:    fld_pointer(astack) <= sensor_index_type__last .
+H10:   1 >= sensor_index_type__first .
+H11:   1 <= sensor_index_type__last .
+        ->
+C1:    value_1 >= sensor_type__first .
+C2:    value_1 <= sensor_type__last .
+C3:    fld_pointer(upf_pointer(astack, 1)) >= 
+           sensor_index_type__first .
+C4:    fld_pointer(upf_pointer(astack, 1)) <= 
+           sensor_index_type__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 21:
+
+procedure_write_sensors_3.
+H1:    value_1 >= sensor_type__first .
+H2:    value_1 <= sensor_type__last .
+H3:    value_2 >= sensor_type__first .
+H4:    value_2 <= sensor_type__last .
+H5:    value_3 >= sensor_type__first .
+H6:    value_3 <= sensor_type__last .
+H7:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H8:    fld_pointer(astack) >= sensor_index_type__first .
+H9:    fld_pointer(astack) <= sensor_index_type__last .
+H10:   1 >= sensor_index_type__first .
+H11:   1 <= sensor_index_type__last .
+H12:   value_1 >= sensor_type__first .
+H13:   value_1 <= sensor_type__last .
+H14:   fld_pointer(upf_pointer(astack, 1)) >= 
+           sensor_index_type__first .
+H15:   fld_pointer(upf_pointer(astack, 1)) <= 
+           sensor_index_type__last .
+        ->
+C1:    fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 >= 
+           sensor_index_type__first .
+C2:    fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 <= 
+           sensor_index_type__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 22:
+
+procedure_write_sensors_4.
+H1:    value_1 >= sensor_type__first .
+H2:    value_1 <= sensor_type__last .
+H3:    value_2 >= sensor_type__first .
+H4:    value_2 <= sensor_type__last .
+H5:    value_3 >= sensor_type__first .
+H6:    value_3 <= sensor_type__last .
+H7:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H8:    fld_pointer(astack) >= sensor_index_type__first .
+H9:    fld_pointer(astack) <= sensor_index_type__last .
+H10:   1 >= sensor_index_type__first .
+H11:   1 <= sensor_index_type__last .
+H12:   value_1 >= sensor_type__first .
+H13:   value_1 <= sensor_type__last .
+H14:   fld_pointer(upf_pointer(astack, 1)) >= 
+           sensor_index_type__first .
+H15:   fld_pointer(upf_pointer(astack, 1)) <= 
+           sensor_index_type__last .
+H16:   fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 >= 
+           sensor_index_type__first .
+H17:   fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 <= 
+           sensor_index_type__last .
+        ->
+C1:    value_2 >= sensor_type__first .
+C2:    value_2 <= sensor_type__last .
+C3:    fld_pointer(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)) >= 
+           sensor_index_type__first .
+C4:    fld_pointer(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)) <= 
+           sensor_index_type__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 23:
+
+procedure_write_sensors_5.
+H1:    value_1 >= sensor_type__first .
+H2:    value_1 <= sensor_type__last .
+H3:    value_2 >= sensor_type__first .
+H4:    value_2 <= sensor_type__last .
+H5:    value_3 >= sensor_type__first .
+H6:    value_3 <= sensor_type__last .
+H7:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H8:    fld_pointer(astack) >= sensor_index_type__first .
+H9:    fld_pointer(astack) <= sensor_index_type__last .
+H10:   1 >= sensor_index_type__first .
+H11:   1 <= sensor_index_type__last .
+H12:   value_1 >= sensor_type__first .
+H13:   value_1 <= sensor_type__last .
+H14:   fld_pointer(upf_pointer(astack, 1)) >= 
+           sensor_index_type__first .
+H15:   fld_pointer(upf_pointer(astack, 1)) <= 
+           sensor_index_type__last .
+H16:   fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 >= 
+           sensor_index_type__first .
+H17:   fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 <= 
+           sensor_index_type__last .
+H18:   value_2 >= sensor_type__first .
+H19:   value_2 <= sensor_type__last .
+H20:   fld_pointer(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)) >= 
+           sensor_index_type__first .
+H21:   fld_pointer(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)) <= 
+           sensor_index_type__last .
+        ->
+C1:    fld_pointer(upf_data(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1), update(fld_data(upf_pointer(upf_data(
+           upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2))) + 1 >= 
+           sensor_index_type__first .
+C2:    fld_pointer(upf_data(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1), update(fld_data(upf_pointer(upf_data(
+           upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2))) + 1 <= 
+           sensor_index_type__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 24:
+
+procedure_write_sensors_6.
+H1:    value_1 >= sensor_type__first .
+H2:    value_1 <= sensor_type__last .
+H3:    value_2 >= sensor_type__first .
+H4:    value_2 <= sensor_type__last .
+H5:    value_3 >= sensor_type__first .
+H6:    value_3 <= sensor_type__last .
+H7:    for_all(i___1: integer, ((i___1 >= sensor_index_type__first) and (
+           i___1 <= sensor_index_type__last)) -> ((element(fld_data(
+           astack), [i___1]) >= sensor_type__first) and (element(
+           fld_data(astack), [i___1]) <= sensor_type__last))) .
+H8:    fld_pointer(astack) >= sensor_index_type__first .
+H9:    fld_pointer(astack) <= sensor_index_type__last .
+H10:   1 >= sensor_index_type__first .
+H11:   1 <= sensor_index_type__last .
+H12:   value_1 >= sensor_type__first .
+H13:   value_1 <= sensor_type__last .
+H14:   fld_pointer(upf_pointer(astack, 1)) >= 
+           sensor_index_type__first .
+H15:   fld_pointer(upf_pointer(astack, 1)) <= 
+           sensor_index_type__last .
+H16:   fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 >= 
+           sensor_index_type__first .
+H17:   fld_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1))) + 1 <= 
+           sensor_index_type__last .
+H18:   value_2 >= sensor_type__first .
+H19:   value_2 <= sensor_type__last .
+H20:   fld_pointer(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)) >= 
+           sensor_index_type__first .
+H21:   fld_pointer(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)) <= 
+           sensor_index_type__last .
+H22:   fld_pointer(upf_data(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1), update(fld_data(upf_pointer(upf_data(
+           upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2))) + 1 >= 
+           sensor_index_type__first .
+H23:   fld_pointer(upf_data(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1), update(fld_data(upf_pointer(upf_data(
+           upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2))) + 1 <= 
+           sensor_index_type__last .
+        ->
+C1:    value_3 >= sensor_type__first .
+C2:    value_3 <= sensor_type__last .
+C3:    fld_pointer(upf_pointer(upf_data(upf_pointer(upf_data(
+           upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1), update(
+           fld_data(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2)), fld_pointer(upf_data(
+           upf_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1), update(
+           fld_data(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2))) + 1)) >= 
+           sensor_index_type__first .
+C4:    fld_pointer(upf_pointer(upf_data(upf_pointer(upf_data(
+           upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1), update(
+           fld_data(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2)), fld_pointer(upf_data(
+           upf_pointer(upf_data(upf_pointer(astack, 1), update(fld_data(
+           upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1), update(
+           fld_data(upf_pointer(upf_data(upf_pointer(astack, 1), update(
+           fld_data(upf_pointer(astack, 1)), [fld_pointer(upf_pointer(
+           astack, 1))], value_1)), fld_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1))) + 1)), [
+           fld_pointer(upf_pointer(upf_data(upf_pointer(
+           astack, 1), update(fld_data(upf_pointer(astack, 1)), [
+           fld_pointer(upf_pointer(astack, 1))], value_1)), fld_pointer(
+           upf_data(upf_pointer(astack, 1), update(fld_data(upf_pointer(
+           astack, 1)), [fld_pointer(upf_pointer(astack, 1))], 
+           value_1))) + 1))], value_2))) + 1)) <= 
+           sensor_index_type__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_write_sensors_7.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+For checks of refinement integrity: 
+
+procedure_write_sensors_8.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_write_sensors_9.
+*** true .          /* trivially true VC removed by Examiner */
+
+

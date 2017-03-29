@@ -1,0 +1,17 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2012}
+             {Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 20-OCT-2016 01:39:01.03}
+
+                           {function Alarm.Enabled}
+
+
+title function enabled;
+
+  function round__(real) : integer;
+
+end;

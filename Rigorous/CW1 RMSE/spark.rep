@@ -1,0 +1,309 @@
+           *******************************************************
+                         Report of SPARK Examination
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 02:21:16.17
+
+Options:
+    noswitch
+    noindex_file
+    nowarning_file
+    notarget_compiler_data
+    noconfig_file
+    source_extension=ada
+    listing_extension=lst
+    nodictionary_file
+    report_file=spark.rep
+    nohtml
+    nostatistics
+    fdl_identifiers=accept
+    flow_analysis=auto
+    language=95
+    profile=sequential
+    annotation_character=#
+    rules=lazy
+    error_explanations=off
+    justification_option=full
+    output_directory=.
+    output_directory (actual)=C:\Users\lenovo pc\Downloads\CW1 RMSE\
+
+Selected files:
+   atp.ads
+   atp.adb
+
+
+No Index files were used
+
+
+No Meta Files used
+
+
+Full warning reporting selected
+
+
+Source Filename(s) used were:
+   C:\Users\lenovo pc\Downloads\CW1 RMSE\atp.ads
+   C:\Users\lenovo pc\Downloads\CW1 RMSE\atp.adb
+
+
+The following were required during analysis but could not be located:
+
+   Unit name                                     Unit type             Reason
+   ---------                                     ---------             ------
+   Console                                       package specification No index file specified.
+   Speedo                                        package specification No index file specified.
+   Brakes                                        package specification No index file specified.
+   Alarm                                         package specification No index file specified.
+   Sensors                                       package specification No index file specified.
+
+
+Source Filename:   C:\Users\lenovo pc\Downloads\CW1 RMSE\atp.ads
+Listing Filename:  C:\Users\lenovo pc\Downloads\CW1 RMSE\atp.lst
+
+   Unit name:  ATP
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+25 error(s) or warning(s)
+
+Line
+   1  --# inherit Sensors, Alarm, Brakes, Speedo, Console;
+                  ^1       ^3     ^4      ^5      ^6
+*** (  1)  Semantic Error    :135: The package Sensors is undeclared or not visible, 
+           or there is a circularity in the list of inherited packages.
+--- (  2)  Warning           :430: SLI generation abandoned owing to syntax or 
+           semantic errors or multiple units in a single source file.
+*** (  3)  Semantic Error    :135: The package Alarm is undeclared or not visible, or 
+           there is a circularity in the list of inherited packages.
+*** (  4)  Semantic Error    :135: The package Brakes is undeclared or not visible, 
+           or there is a circularity in the list of inherited packages.
+*** (  5)  Semantic Error    :135: The package Speedo is undeclared or not visible, 
+           or there is a circularity in the list of inherited packages.
+*** (  6)  Semantic Error    :135: The package Console is undeclared or not visible, 
+           or there is a circularity in the list of inherited packages.
+
+   7  	--# global in Sensors.State;
+      	              ^7
+*** (  7)  Semantic Error    :144: The dotted name Sensors is either undeclared or 
+           not visible at this point.
+
+   8  	--#	in out Brakes.State;
+      	   	       ^8
+*** (  8)  Semantic Error    :144: The dotted name Brakes is either undeclared or not 
+           visible at this point.
+
+   9  	--#	in out Alarm.State;
+      	   	       ^9
+*** (  9)  Semantic Error    :144: The dotted name Alarm is either undeclared or not 
+           visible at this point.
+
+  10  	--#	in Speedo.Speed;
+      	   	   ^10
+*** ( 10)  Semantic Error    :144: The dotted name Speedo is either undeclared or not 
+           visible at this point.
+
+  12  	--#	in out Console.SPAD_Cnt;
+      	   	       ^11
+*** ( 11)  Semantic Error    :144: The dotted name Console is either undeclared or 
+           not visible at this point.
+
+  13  	--# derives Alarm.State from Sensors.State, Alarm.State, Brakes.State &
+      	            ^12              ^13            ^14          ^15
+*** ( 12)  Semantic Error    :753: The identifier Alarm is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 13)  Semantic Error    :752: The identifier Sensors is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 14)  Semantic Error    :752: The identifier Alarm is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 15)  Semantic Error    :752: The identifier Brakes is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+
+  14  	--#	Brakes.State from Sensors.State, Train_Speed_Temp_Memory, Speedo.Speed, Brakes.State, Alarm.State &
+      	   	^16               ^17                                     ^18           ^19           ^20
+*** ( 16)  Semantic Error    :753: The identifier Brakes is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 17)  Semantic Error    :752: The identifier Sensors is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 18)  Semantic Error    :752: The identifier Speedo is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 19)  Semantic Error    :752: The identifier Brakes is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 20)  Semantic Error    :752: The identifier Alarm is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+
+  15  	--#	Train_Speed_Temp_Memory from Speedo.Speed &
+      	   	                             ^21
+*** ( 21)  Semantic Error    :752: The identifier Speedo is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+
+  16  	--#	Console.SPAD_Cnt from Console.SPAD_Cnt, Sensors.State, Brakes.State;
+      	   	^22                   ^23               ^24            ^25
+*** ( 22)  Semantic Error    :753: The identifier Console is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 23)  Semantic Error    :752: The identifier Console is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 24)  Semantic Error    :752: The identifier Sensors is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+*** ( 25)  Semantic Error    :752: The identifier Brakes is either undeclared or not 
+           visible at this point. This identifier must appear in a preceding 
+           legal global annotation or formal parameter list.
+
+
+Source Filename:   C:\Users\lenovo pc\Downloads\CW1 RMSE\atp.adb
+Listing Filename:  C:\Users\lenovo pc\Downloads\CW1 RMSE\atp.lst
+
+   Unit name:  ATP
+   Unit type:  package body
+   Unit has been analysed, any errors are listed below.
+
+32 error(s) or warning(s)
+
+Line
+   1  with Sensors, Alarm, Brakes, Speedo, Console;
+           ^1       ^2     ^3      ^4      ^5
+--- (  1)  Warning           :  1: The identifier Sensors is either undeclared or not 
+           visible at this point.
+--- (  2)  Warning           :  1: The identifier Alarm is either undeclared or not 
+           visible at this point.
+--- (  3)  Warning           :  1: The identifier Brakes is either undeclared or not 
+           visible at this point.
+--- (  4)  Warning           :  1: The identifier Speedo is either undeclared or not 
+           visible at this point.
+--- (  5)  Warning           :  1: The identifier Console is either undeclared or not 
+           visible at this point.
+
+   5  	Train_Speed_Temp_Memory: Speedo.Speed_Type;
+      	                         ^6
+*** (  6)  Semantic Error    :754: The identifier Speedo is either undeclared or not 
+           visible at this point. This package must be both inherited and 
+           withed to be visible here.
+
+   9  		Sensors_Value: Sensors.Sensor_Type;
+      		               ^7
+*** (  7)  Semantic Error    :754: The identifier Sensors is either undeclared or not 
+           visible at this point. This package must be both inherited and 
+           withed to be visible here.
+
+  11  		if not Brakes.Activated then
+      		   ^8  ^9
+*** (  8)  Semantic Error    : 94: Condition is not boolean.
+*** (  9)  Semantic Error    :  1: The identifier Brakes is either undeclared or not 
+           visible at this point.
+
+  12  			Sensors_Value := Sensors.Read_Sensor_Majority;
+      			                 ^10
+*** ( 10)  Semantic Error    :  1: The identifier Sensors is either undeclared or not 
+           visible at this point.
+
+  13  			case Sensors_Value is
+      			     ^11
+*** ( 11)  Semantic Error    : 46: Discrete type required.
+
+  14  				when Sensors.Proceed =>
+      				     ^12,13
+*** ( 12)  Semantic Error    :  1: The identifier Sensors is either undeclared or not 
+           visible at this point.
+--- ( 13)  Warning           :200: This static expression cannot be evaluated by the 
+           Examiner.
+
+  15  					if Alarm.Enabled then
+      					   ^14,15
+*** ( 14)  Semantic Error    :  1: The identifier Alarm is either undeclared or not 
+           visible at this point.
+*** ( 15)  Semantic Error    : 94: Condition is not boolean.
+
+  16  						Alarm.Disable;
+      						^16
+*** ( 16)  Semantic Error    :142: The subprogram prefix Alarm is either undeclared 
+           or not visible at this point.
+
+  18  				when Sensors.Caution =>
+      				     ^17,18
+*** ( 17)  Semantic Error    :  1: The identifier Sensors is either undeclared or not 
+           visible at this point.
+--- ( 18)  Warning           :200: This static expression cannot be evaluated by the 
+           Examiner.
+
+  19  					if Alarm.Enabled then
+      					   ^19,20
+*** ( 19)  Semantic Error    :  1: The identifier Alarm is either undeclared or not 
+           visible at this point.
+*** ( 20)  Semantic Error    : 94: Condition is not boolean.
+
+  20  						if Speedo.Read_Speed >= Train_Speed_Temp_Memory then
+      						   ^21
+*** ( 21)  Semantic Error    :  1: The identifier Speedo is either undeclared or not 
+           visible at this point.
+
+  21  							Brakes.Activate;
+      							^22
+*** ( 22)  Semantic Error    :142: The subprogram prefix Brakes is either undeclared 
+           or not visible at this point.
+
+  24  					Alarm.Enable;
+      					^23
+*** ( 23)  Semantic Error    :142: The subprogram prefix Alarm is either undeclared 
+           or not visible at this point.
+
+  25  				when Sensors.Danger =>
+      				     ^24,25
+*** ( 24)  Semantic Error    :  1: The identifier Sensors is either undeclared or not 
+           visible at this point.
+--- ( 25)  Warning           :200: This static expression cannot be evaluated by the 
+           Examiner.
+
+  26  					Brakes.Activate;
+      					^26
+*** ( 26)  Semantic Error    :142: The subprogram prefix Brakes is either undeclared 
+           or not visible at this point.
+
+  27  					Alarm.Enable;
+      					^27
+*** ( 27)  Semantic Error    :142: The subprogram prefix Alarm is either undeclared 
+           or not visible at this point.
+
+  28  					Console.Inc_SPAD_Cnt;
+      					^28
+*** ( 28)  Semantic Error    :142: The subprogram prefix Console is either undeclared 
+           or not visible at this point.
+
+  30  					Alarm.Enable;
+      					^29
+*** ( 29)  Semantic Error    :142: The subprogram prefix Alarm is either undeclared 
+           or not visible at this point.
+
+  33  			Alarm.Disable;
+      			^30
+*** ( 30)  Semantic Error    :142: The subprogram prefix Alarm is either undeclared 
+           or not visible at this point.
+
+  34  			Brakes.Deactivate;
+      			^31
+*** ( 31)  Semantic Error    :142: The subprogram prefix Brakes is either undeclared 
+           or not visible at this point.
+
+  37  		Train_Speed_Temp_Memory := Speedo.Read_Speed;
+      		                           ^32
+*** ( 32)  Semantic Error    :  1: The identifier Speedo is either undeclared or not 
+           visible at this point.
+
+Note: Automatic flow analysis mode selected
+
+
+--End of file--------------------------------------------------

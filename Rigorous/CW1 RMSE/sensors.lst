@@ -1,0 +1,98 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 14-OCT-2016 22:37:34.07
+
+Line
+   1  package body Sensors
+   2  --# own State is AStack;
+   3  is
+   4  	--state is hidden and is comprised of an array and a pointer
+   5  	type Vector is array(Sensor_Index_Type) of Sensor_Type;
+   6  	type Stack is
+   7  		record
+   8  			Data: Vector;
+   9  			Pointer: Sensor_Index_Type;
+  10  		end record;
+  11  	AStack: Stack;
+  12  
+  13  
+  14  	procedure Write_Sensors(Value_1, Value_2, Value_3: in Sensor_Type)
+  15  	--# global in out AStack;
+  16  	--# derives AStack from Value_1, Value_2, Value_3, AStack;
+
+!!! (  1)  Flow Error        :  4: The dependency of the exported value of State on 
+           the imported value of State has not been previously stated.
+
+  17  	is
+  18  	begin
+  19  		AStack.Pointer := 1;
+  20  		AStack.Data(AStack.Pointer) := Value_1;
+  21  		AStack.Pointer := AStack.Pointer + 1;
+  22  		AStack.Data(AStack.Pointer) := Value_2;
+  23  		AStack.Pointer := AStack.Pointer + 1;
+  24  		AStack.Data(AStack.Pointer) := Value_3;
+  25  	end Write_Sensors;
+
++++        Flow analysis of subprogram Write_Sensors 
+           performed (information-flow mode): no errors found.
+
+  26  
+  27  	function Read_Sensor(Sensor_Index: in Sensor_Index_Type) return Sensor_Type
+  28  	--# global in AStack;
+  29  	is
+  30  	begin
+  31  		return AStack.Data(Sensor_Index);
+  32  	end Read_Sensor;
+
++++        Flow analysis of subprogram Read_Sensor 
+           performed (information-flow mode): no errors found.
+
+  33  
+  34  	function Read_Sensor_Majority return Sensor_Type
+  35  	--# global in AStack;
+  36  	--# return AResult => ((AStack.Data(1) /= AStack.Data(2) and AStack.Data(1) /= AStack.Data(3) and AStack.Data(2) /= AStack.Data(3)) -> AResult = Undef) and
+  37  	--# (AStack.Data(1) = AStack.Data(2) -> AResult = AStack.Data(1)) and
+  38  	--# (AStack.Data(1) = AStack.Data(3) -> AResult = AStack.Data(1)) and
+  39  	--# (AStack.Data(2) = AStack.Data(3) -> AResult = AStack.Data(2));
+  40  	is
+  41  		AResult: Sensor_Type;
+  42  	begin
+  43  		AResult := Undef;
+  44  		if AStack.Data(1) /= AStack.Data(2) AND AStack.Data(1) /= AStack.Data(3) AND AStack.Data(2) /= AStack.Data(3) then
+  45  			AResult := Undef;
+  46  		else
+  47  			if AStack.Data(1) = AStack.Data(2) then
+  48  				AResult := AStack.Data(1);
+  49  			elsif AStack.Data(1) = AStack.Data(3) then
+  50  				AResult := AStack.Data(1);
+  51  			elsif AStack.Data(2) = AStack.Data(3) then
+  52  				AResult := AStack.Data(2);
+  53  			end if;
+  54  		end if;
+  55  
+  56  		return AResult;
+  57  	end Read_Sensor_Majority;
+
++++        Flow analysis of subprogram Read_Sensor_Majority 
+           performed (information-flow mode): no errors found.
+
+  58  
+  59  begin
+  60  	--simultaneous assignment using aggregate construct
+  61  	AStack.Data := Vector'(Sensor_Index_Type => Undef);
+  62  	AStack.Pointer := 1;
+  63  end Sensors;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

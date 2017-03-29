@@ -1,0 +1,38 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Desktop\Final F21RS 2016\Counter\
+P
+R
+
+U counter%b counter.adb
+U counter%s counter.ads
+
+D counter.ads 00000000000000 00000000
+D counter.adb 00000000000000 00000000
+
+X 1 counter.ads
+2H9 my_counter 16m14 3r17 6r20 9r20 12r16 15r17 2|3O2
+5U12 Increment 6=20
+8U12 Decrement 9=20
+11V11 Value 12>16
+14U12 Reset 15<17
+14i18 AValue 16r30

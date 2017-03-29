@@ -1,0 +1,17 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2012}
+             {Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 20-OCT-2016 01:38:57.19}
+
+                        {procedure Brakes.Deactivate}
+
+
+title procedure deactivate;
+
+  function round__(real) : integer;
+
+end;

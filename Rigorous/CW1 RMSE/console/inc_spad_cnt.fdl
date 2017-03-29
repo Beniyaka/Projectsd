@@ -1,0 +1,29 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2012}
+             {Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 20-OCT-2016 01:39:02.33}
+
+                       {procedure Console.Inc_SPAD_Cnt}
+
+
+title procedure inc_spad_cnt;
+
+  function round__(real) : integer;
+  type spad_cnt_subtype = integer;
+  const spad_cnt_subtype__base__first : integer = pending; 
+  const spad_cnt_subtype__base__last : integer = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const spad_cnt_subtype__first : integer = pending; 
+  const spad_cnt_subtype__last : integer = pending; 
+  const spad_cnt_subtype__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var spad_cnt : integer;
+
+end;

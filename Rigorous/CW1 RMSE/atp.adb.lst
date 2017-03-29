@@ -1,0 +1,65 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:02.69
+
+Line
+   1  with Sensors, Alarm, Brakes, Speedo, Console;
+   2  package body ATP
+   3  is
+   4  	--used within atp package only
+   5  	Train_Speed_Temp_Memory: Speedo.Speed_Type;
+   6  
+   7  	procedure Control
+   8  	is
+   9  		Sensors_Value: Sensors.Sensor_Type;
+  10  	begin
+  11  		if not Brakes.Activated then
+  12  			Sensors_Value := Sensors.Read_Sensor_Majority;
+  13  			case Sensors_Value is
+  14  				when Sensors.Proceed =>
+  15  					if Alarm.Enabled then
+  16  						Alarm.Disable;
+  17  					end if;
+  18  				when Sensors.Caution =>
+  19  					if Alarm.Enabled then
+  20  						if Speedo.Read_Speed >= Train_Speed_Temp_Memory then
+  21  							Brakes.Activate;
+  22  						end if;
+  23  					end if;
+  24  					Alarm.Enable;
+  25  				when Sensors.Danger =>
+  26  					Brakes.Activate;
+  27  					Alarm.Enable;
+  28  					Console.Inc_SPAD_Cnt;
+  29  				when others =>
+  30  					Alarm.Enable;
+  31  			end case;
+  32  		else 
+  33  			Alarm.Disable;
+  34  			Brakes.Deactivate;
+  35  		end if;
+  36  
+  37  		Train_Speed_Temp_Memory := Speedo.Read_Speed;
+  38  	end Control;
+
++++        Flow analysis of subprogram Control performed 
+           (information-flow mode): no errors found.
+
+  39  
+  40  begin
+  41  	Train_Speed_Temp_Memory := 0;
+  42  end ATP;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

@@ -1,0 +1,63 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 13-OCT-2016 14:39:26.83
+
+Line
+   1  package body counter
+   2  is
+   3  	my_counter: Integer;
+   4  
+   5  	procedure Increment is
+   6  	begin
+   7  		my_counter := my_counter + 1;
+   8  	end Increment;
+
++++        Flow analysis of subprogram Increment performed 
+           (data-flow mode): no errors found.
+
+   9  
+  10  	procedure Decrement is
+  11  	begin
+  12  		my_counter := my_counter - 1;
+  13  	end Decrement;
+
++++        Flow analysis of subprogram Decrement performed 
+           (data-flow mode): no errors found.
+
+  14  
+  15  	function Value return Integer is
+  16  	begin
+  17  		return my_counter;
+  18  	end Value;
+
++++        Flow analysis of subprogram Value performed 
+           (information-flow mode): no errors found.
+
+  19  
+  20  	procedure Reset(AValue: in Integer) is
+  21  	begin
+  22  		my_counter := AValue;
+  23  	end Reset;
+
++++        Flow analysis of subprogram Reset performed 
+           (information-flow mode): no errors found.
+
+  24  
+  25  begin
+  26  	my_counter:=0;
+  27  
+  28  end counter;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

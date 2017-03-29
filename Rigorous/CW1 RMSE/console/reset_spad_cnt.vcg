@@ -1,0 +1,29 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:02.37
+
+                      procedure Console.Reset_SPAD_Cnt
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 38:
+
+procedure_reset_spad_cnt_1.
+H1:    true .
+        ->
+C1:    0 >= spad_cnt_subtype__first .
+C2:    0 <= spad_cnt_subtype__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_reset_spad_cnt_2.
+*** true .          /* trivially true VC removed by Examiner */
+
+

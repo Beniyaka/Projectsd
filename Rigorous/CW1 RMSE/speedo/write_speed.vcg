@@ -1,0 +1,30 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:56.84
+
+                        procedure Speedo.Write_Speed
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 8:
+
+procedure_write_speed_1.
+H1:    s >= speed_type__first .
+H2:    s <= speed_type__last .
+        ->
+C1:    s >= speed_type__first .
+C2:    s <= speed_type__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_write_speed_2.
+*** true .          /* trivially true VC removed by Examiner */
+
+

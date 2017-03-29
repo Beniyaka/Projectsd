@@ -1,0 +1,32 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:02.56
+
+Line
+   1  --# inherit Sensors, Alarm, Brakes, Speedo, Console;
+   2  package ATP
+   3  	--# own Train_Speed_Temp_Memory;
+   4  	--# initializes Train_Speed_Temp_Memory;
+   5  is
+   6  	procedure Control;
+   7  	--# global in Sensors.State;
+   8  	--#	in out Brakes.State;
+   9  	--#	in out Alarm.State;
+  10  	--#	in Speedo.Speed;
+  11  	--#	in out Train_Speed_Temp_Memory;
+  12  	--#	in out Console.SPAD_Cnt;
+  13  	--# derives Alarm.State from Sensors.State, Alarm.State, Brakes.State &
+  14  	--#	Brakes.State from Sensors.State, Train_Speed_Temp_Memory, Speedo.Speed, Brakes.State, Alarm.State &
+  15  	--#	Train_Speed_Temp_Memory from Speedo.Speed &
+  16  	--#	Console.SPAD_Cnt from Console.SPAD_Cnt, Sensors.State, Brakes.State;
+  17  end ATP;
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

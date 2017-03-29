@@ -1,0 +1,82 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2012*/
+             /*Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 20-OCT-2016 01:39:02.60*/
+
+                           /*procedure ATP.Control*/
+
+
+rule_family control_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+control_rules(1): integer__size >= 0 may_be_deduced.
+control_rules(2): integer__first <= integer__last may_be_deduced.
+control_rules(3): integer__base__first <= integer__base__last may_be_deduced.
+control_rules(4): integer__base__first <= integer__first may_be_deduced.
+control_rules(5): integer__base__last >= integer__last may_be_deduced.
+control_rules(6): sensors__sensor_type__size >= 0 may_be_deduced.
+control_rules(7): sensors__sensor_type__first may_be_replaced_by sensors__proceed.
+control_rules(8): sensors__sensor_type__last may_be_replaced_by sensors__undef.
+control_rules(9): sensors__sensor_type__base__first may_be_replaced_by sensors__proceed.
+control_rules(10): sensors__sensor_type__base__last may_be_replaced_by sensors__undef.
+control_rules(11): sensors__sensor_type__pos(sensors__sensor_type__first) may_be_replaced_by 0.
+control_rules(12): sensors__sensor_type__pos(sensors__proceed) may_be_replaced_by 0.
+control_rules(13): sensors__sensor_type__val(0) may_be_replaced_by 
+     sensors__proceed.
+control_rules(14): sensors__sensor_type__pos(sensors__caution) may_be_replaced_by 1.
+control_rules(15): sensors__sensor_type__val(1) may_be_replaced_by 
+     sensors__caution.
+control_rules(16): sensors__sensor_type__pos(sensors__danger) may_be_replaced_by 2.
+control_rules(17): sensors__sensor_type__val(2) may_be_replaced_by 
+     sensors__danger.
+control_rules(18): sensors__sensor_type__pos(sensors__undef) may_be_replaced_by 3.
+control_rules(19): sensors__sensor_type__val(3) may_be_replaced_by 
+     sensors__undef.
+control_rules(20): sensors__sensor_type__pos(sensors__sensor_type__last) may_be_replaced_by 3.
+control_rules(21): sensors__sensor_type__pos(succ(X)) may_be_replaced_by 
+     sensors__sensor_type__pos(X) + 1
+     if [X <=sensors__undef, X <> sensors__undef].
+control_rules(22): sensors__sensor_type__pos(pred(X)) may_be_replaced_by 
+     sensors__sensor_type__pos(X) - 1
+     if [X >=sensors__proceed, X <> sensors__proceed].
+control_rules(23): sensors__sensor_type__pos(X) >= 0 may_be_deduced_from
+     [sensors__proceed <= X, X <= sensors__undef].
+control_rules(24): sensors__sensor_type__pos(X) <= 3 may_be_deduced_from
+     [sensors__proceed <= X, X <= sensors__undef].
+control_rules(25): sensors__sensor_type__val(X) >= 
+     sensors__proceed may_be_deduced_from
+     [0 <= X, X <= 3].
+control_rules(26): sensors__sensor_type__val(X) <= sensors__undef may_be_deduced_from
+     [0 <= X, X <= 3].
+control_rules(27): succ(sensors__sensor_type__val(X)) may_be_replaced_by 
+     sensors__sensor_type__val(X+1)
+     if [0 <= X, X < 3].
+control_rules(28): pred(sensors__sensor_type__val(X)) may_be_replaced_by 
+     sensors__sensor_type__val(X-1)
+     if [0 < X, X <= 3].
+control_rules(29): sensors__sensor_type__pos(sensors__sensor_type__val(X)) may_be_replaced_by X
+     if [0 <= X, X <= 3].
+control_rules(30): sensors__sensor_type__val(sensors__sensor_type__pos(X)) may_be_replaced_by X
+     if [sensors__proceed <= X, X <= sensors__undef].
+control_rules(31): sensors__sensor_type__pos(X) <= 
+     sensors__sensor_type__pos(Y) & X <= Y are_interchangeable 
+     if [sensors__proceed <= X, X <= sensors__undef, 
+     sensors__proceed <= Y, Y <= sensors__undef].
+control_rules(32): sensors__sensor_type__val(X) <= 
+     sensors__sensor_type__val(Y) & X <= Y are_interchangeable 
+     if [0 <= X, X <= 3, 0 <= Y, Y <= 3].
+control_rules(33): speedo__speed_type__size >= 0 may_be_deduced.
+control_rules(34): speedo__speed_type__first may_be_replaced_by 0.
+control_rules(35): speedo__speed_type__last may_be_replaced_by 150.
+control_rules(36): speedo__speed_type__base__first <= 
+     speedo__speed_type__base__last may_be_deduced.
+control_rules(37): speedo__speed_type__base__first <= 
+     speedo__speed_type__first may_be_deduced.
+control_rules(38): speedo__speed_type__base__last >= 
+     speedo__speed_type__last may_be_deduced.

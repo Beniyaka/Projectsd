@@ -1,0 +1,49 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 13-OCT-2016 14:37:19.81
+
+Line
+   1  with Text_IO, Counter;
+   2  use  Text_IO, Counter;
+           ^1
+*** (  1)  Syntax Error      : reserved word "TYPE" expected.
+--- (  2)  Warning           :430: SLI generation abandoned owing to syntax or 
+           semantic errors or multiple units in a single source file.
+
+   3  
+   4  procedure Use_Counter is
+   5  
+   6     package Integer_INOUT is new Integer_IO(Integer);
+   7     use Integer_INOUT;
+             ^3
+*** (  3)  Syntax Error      : reserved word "TYPE" expected.
+
+   8  
+   9     Op_Code: Integer;
+  10     Data:    Integer;
+  11  
+  12  begin
+  13     loop
+  14        Put("1 = Inc; 2 = Dec; 3 = Print; 4 = Reset: ");
+  15        Get(Op_Code);
+  16        case Op_Code is
+  17           when 1 => Inc;
+  18           when 2 => Dec;
+  19           when 3 => Put("Count = ");Put(Value, 2);New_Line;
+  20           when 4 => Put("Data: "); Get(Data);
+  21                     Reset(Data);
+  22           when others => Put_Line("Error");
+  23        end case;
+  24     end loop;
+  25  
+  26  end Use_Counter;
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

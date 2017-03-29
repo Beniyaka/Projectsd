@@ -1,0 +1,44 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Desktop\Final F21RS 2016\Stack\
+P
+R
+
+U ASM_Int_Stack%b asm_int_stack.adb
+U ASM_Int_Stack%s asm_int_stack.ads
+
+D asm_int_stack.ads 00000000000000 00000000
+D asm_int_stack.adb 00000000000000 00000000
+
+X 1 asm_int_stack.ads
+3H11 State 11m16 18m24 4r20 7r18 10r22 11r30 14r18 17r22 18r35
+. 2|3c11
+6V13 Full 7>18 2|13>21
+9U14 Push 10=22 2|20=24 20=30
+9i19 X 11r27 2|21r28
+13V13 Empty 14>18 2|30>18
+16U14 Pop 17=22 2|38=17 37>16
+16i18 AValue 18m16 2|40m10
+X 2 asm_int_stack.adb
+9a4 Data 21m18 3o20 20r24 21r31 37r16 40r22
+10i4 Pointer 22m18 39m14 3o26 13r21 20r30 21r37 22r31 30r18 38r17
+. 39r27 40r28

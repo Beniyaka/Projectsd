@@ -1,0 +1,50 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:59.44
+
+Line
+   1  
+   2  -- Author:              A. Ireland
+   3  --
+   4  -- Address:             School Mathematical & Computer Sciences
+   5  --                      Heriot-Watt University
+   6  --                      Edinburgh, EH14 4AS
+   7  --
+   8  -- E-mail:              a.ireland@hw.ac.uk
+   9  --
+  10  -- Last modified:       25/9/2013
+  11  --
+  12  -- Filename:            alarm.ads
+  13  --
+  14  -- Description:         Models the alarm device associated
+  15  --                      with the ATP controller.
+  16  
+  17  
+  18  package Alarm
+  19     --# own State;
+  20     --# initializes State;
+  21  is
+  22     procedure Enable;
+  23     --# global out State;
+  24     --# derives State from ;
+  25  
+  26     procedure Disable;
+  27     --# global out State;
+  28     --# derives State from ;
+  29  
+  30     function Enabled return Boolean;
+  31     --# global in State;
+  32  
+  33  end Alarm;
+  34  
+  35  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

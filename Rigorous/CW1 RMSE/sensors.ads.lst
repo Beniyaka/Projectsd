@@ -1,0 +1,53 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:56.31
+
+Line
+   1  
+   2  -- Author:              A. Ireland
+   3  --
+   4  -- Address:             School Mathematical & Computer Sciences
+   5  --                      Heriot-Watt University
+   6  --                      Edinburgh, EH14 4AS
+   7  --
+   8  -- E-mail:              a.ireland@hw.ac.uk
+   9  --
+  10  -- Last modified:       25/9/2013
+  11  --
+  12  -- Filename:            sensors.ads
+  13  --
+  14  -- Description:         Models the 3 sensors associated with the ATP system. Note that
+  15  --                      a single sensor reading is calculated using a majority vote
+  16  --                      algorithm.
+  17  
+  18  package Sensors
+  19     --# own State;
+  20     --# initializes State;
+  21  is
+  22     type Sensor_Type is (Proceed, Caution, Danger, Undef);
+  23     subtype Sensor_Index_Type is Integer range 1..3;
+  24  
+  25     procedure Write_Sensors(Value_1, Value_2, Value_3: in Sensor_Type);
+  26     --# global out State;
+  27     --# derives State from Value_1, Value_2, Value_3;
+  28  
+  29     function Read_Sensor(Sensor_Index: in Sensor_Index_Type) return Sensor_Type;
+  30     --# global in State;
+  31  
+  32     function Read_Sensor_Majority return Sensor_Type;
+  33     --# global in State;
+  34  
+  35  end Sensors;
+  36  
+  37  
+  38  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

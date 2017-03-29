@@ -1,0 +1,24 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:02.42
+
+                      function Console.SPAD_Cnt_Value
+
+
+
+
+For path(s) from start to finish:
+
+function_spad_cnt_value_1.
+H1:    spad_cnt >= spad_cnt_subtype__first .
+H2:    spad_cnt <= spad_cnt_subtype__last .
+        ->
+C1:    spad_cnt >= integer__first .
+C2:    spad_cnt <= integer__last .
+ 
+

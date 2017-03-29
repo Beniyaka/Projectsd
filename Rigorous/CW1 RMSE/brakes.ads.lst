@@ -1,0 +1,49 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:38:57.03
+
+Line
+   1  
+   2  -- Author:              A. Ireland
+   3  --
+   4  -- Address:             School Mathematical & Computer Sciences
+   5  --                      Heriot-Watt University
+   6  --                      Edinburgh, EH14 4AS
+   7  --
+   8  -- E-mail:              a.ireland@hw.ac.uk
+   9  --
+  10  -- Last modified:       25/9/2013
+  11  --
+  12  -- Filename:            brakes.ads
+  13  --
+  14  -- Description:         Models the train braking subsystem associated
+  15  --                      with the ATP controller.
+  16  
+  17  package Brakes
+  18     --# own State;
+  19     --# initializes State;
+  20  is
+  21     procedure Activate;
+  22     --# global out State;
+  23     --# derives State from ;
+  24  
+  25     procedure Deactivate;
+  26     --# global out State;
+  27     --# derives State from ;
+  28  
+  29     function Activated return Boolean;
+  30     --# global in State;
+  31  
+  32  end Brakes;
+  33  
+  34  
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------

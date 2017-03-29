@@ -1,0 +1,42 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2012}
+             {Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 20-OCT-2016 01:38:56.44}
+
+                        {function Sensors.Read_Sensor}
+
+
+title function read_sensor;
+
+  function round__(real) : integer;
+  type sensor_type = (proceed, caution, danger, undef);
+  type sensor_index_type = integer;
+  type vector = array [sensor_index_type] of sensor_type;
+  type stack = record
+        data : vector;
+        pointer : sensor_index_type
+     end;
+  const sensor_index_type__base__first : integer = pending; 
+  const sensor_index_type__base__last : integer = pending; 
+  const sensor_type__base__first : sensor_type = pending; 
+  const sensor_type__base__last : sensor_type = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const stack__size : integer = pending; 
+  const sensor_index_type__first : integer = pending; 
+  const sensor_index_type__last : integer = pending; 
+  const sensor_index_type__size : integer = pending; 
+  const sensor_type__first : sensor_type = pending; 
+  const sensor_type__last : sensor_type = pending; 
+  const sensor_type__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var sensor_index : integer;
+  var astack : stack;
+
+end;

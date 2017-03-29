@@ -1,0 +1,36 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Desktop\Final F21RS 2016\CW1\
+P
+R
+
+U Alarm%b alarm.adb
+U Alarm%s alarm.ads
+
+D alarm.ads 00000000000000 00000000
+D alarm.adb 00000000000000 00000000
+
+X 1 alarm.ads
+19H12 State 24m16 28m16 20r20 23r19 27r19 31r18 2|3O2
+22U14 Enable 23<19
+26U14 Disable 27<19
+30V13 Enabled 31>18

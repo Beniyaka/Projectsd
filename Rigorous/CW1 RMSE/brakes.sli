@@ -1,0 +1,36 @@
+V "SPARK 2012"
+A -noswitch
+A -noindex_file
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=auto
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=lazy
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=C:\Users\lenovo pc\Downloads\CW1 RMSE\
+P
+R
+
+U Brakes%b brakes.adb
+U Brakes%s brakes.ads
+
+D brakes.ads 00000000000000 00000000
+D brakes.adb 00000000000000 00000000
+
+X 1 brakes.ads
+17H12 State 22m16 26m16 18r20 21r19 25r19 29r18 2|3O2
+20U14 Activate 21<19
+24U14 Deactivate 25<19
+28V13 Activated 29>18

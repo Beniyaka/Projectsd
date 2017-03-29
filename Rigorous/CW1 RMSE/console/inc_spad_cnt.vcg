@@ -1,0 +1,48 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 01:39:02.33
+
+                       procedure Console.Inc_SPAD_Cnt
+
+
+
+
+For path(s) from start to check associated with statement of line 30:
+
+procedure_inc_spad_cnt_1.
+H1:    spad_cnt >= spad_cnt_subtype__first .
+H2:    spad_cnt <= spad_cnt_subtype__last .
+H3:    spad_cnt < spad_cnt_subtype__last .
+        ->
+C1:    spad_cnt + 1 >= integer__first .
+C2:    spad_cnt + 1 <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 31:
+
+procedure_inc_spad_cnt_2.
+H1:    spad_cnt >= spad_cnt_subtype__first .
+H2:    spad_cnt <= spad_cnt_subtype__last .
+H3:    spad_cnt < spad_cnt_subtype__last .
+H4:    spad_cnt + 1 >= integer__first .
+H5:    spad_cnt + 1 <= integer__last .
+        ->
+C1:    spad_cnt + 1 >= spad_cnt_subtype__first .
+C2:    spad_cnt + 1 <= spad_cnt_subtype__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_inc_spad_cnt_3.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_inc_spad_cnt_4.
+*** true .          /* trivially true VC removed by Examiner */
+
+

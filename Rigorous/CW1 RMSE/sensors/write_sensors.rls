@@ -1,0 +1,84 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2012*/
+             /*Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 20-OCT-2016 01:38:56.38*/
+
+                      /*procedure Sensors.Write_Sensors*/
+
+
+rule_family write_sensor_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+write_sensor_rules(1): integer__size >= 0 may_be_deduced.
+write_sensor_rules(2): integer__first <= integer__last may_be_deduced.
+write_sensor_rules(3): integer__base__first <= integer__base__last may_be_deduced.
+write_sensor_rules(4): integer__base__first <= integer__first may_be_deduced.
+write_sensor_rules(5): integer__base__last >= integer__last may_be_deduced.
+write_sensor_rules(6): sensor_type__size >= 0 may_be_deduced.
+write_sensor_rules(7): sensor_type__first may_be_replaced_by proceed.
+write_sensor_rules(8): sensor_type__last may_be_replaced_by undef.
+write_sensor_rules(9): sensor_type__base__first may_be_replaced_by proceed.
+write_sensor_rules(10): sensor_type__base__last may_be_replaced_by undef.
+write_sensor_rules(11): sensor_type__pos(sensor_type__first) may_be_replaced_by 0.
+write_sensor_rules(12): sensor_type__pos(proceed) may_be_replaced_by 0.
+write_sensor_rules(13): sensor_type__val(0) may_be_replaced_by 
+     proceed.
+write_sensor_rules(14): sensor_type__pos(caution) may_be_replaced_by 1.
+write_sensor_rules(15): sensor_type__val(1) may_be_replaced_by 
+     caution.
+write_sensor_rules(16): sensor_type__pos(danger) may_be_replaced_by 2.
+write_sensor_rules(17): sensor_type__val(2) may_be_replaced_by 
+     danger.
+write_sensor_rules(18): sensor_type__pos(undef) may_be_replaced_by 3.
+write_sensor_rules(19): sensor_type__val(3) may_be_replaced_by 
+     undef.
+write_sensor_rules(20): sensor_type__pos(sensor_type__last) may_be_replaced_by 3.
+write_sensor_rules(21): sensor_type__pos(succ(X)) may_be_replaced_by 
+     sensor_type__pos(X) + 1
+     if [X <=undef, X <> undef].
+write_sensor_rules(22): sensor_type__pos(pred(X)) may_be_replaced_by 
+     sensor_type__pos(X) - 1
+     if [X >=proceed, X <> proceed].
+write_sensor_rules(23): sensor_type__pos(X) >= 0 may_be_deduced_from
+     [proceed <= X, X <= undef].
+write_sensor_rules(24): sensor_type__pos(X) <= 3 may_be_deduced_from
+     [proceed <= X, X <= undef].
+write_sensor_rules(25): sensor_type__val(X) >= proceed may_be_deduced_from
+     [0 <= X, X <= 3].
+write_sensor_rules(26): sensor_type__val(X) <= undef may_be_deduced_from
+     [0 <= X, X <= 3].
+write_sensor_rules(27): succ(sensor_type__val(X)) may_be_replaced_by 
+     sensor_type__val(X+1)
+     if [0 <= X, X < 3].
+write_sensor_rules(28): pred(sensor_type__val(X)) may_be_replaced_by 
+     sensor_type__val(X-1)
+     if [0 < X, X <= 3].
+write_sensor_rules(29): sensor_type__pos(sensor_type__val(X)) may_be_replaced_by X
+     if [0 <= X, X <= 3].
+write_sensor_rules(30): sensor_type__val(sensor_type__pos(X)) may_be_replaced_by X
+     if [proceed <= X, X <= undef].
+write_sensor_rules(31): sensor_type__pos(X) <= sensor_type__pos(Y) & X <= Y are_interchangeable 
+     if [proceed <= X, X <= undef, proceed <= Y, Y <= undef].
+write_sensor_rules(32): sensor_type__val(X) <= sensor_type__val(Y) & X <= Y are_interchangeable 
+     if [0 <= X, X <= 3, 0 <= Y, Y <= 3].
+write_sensor_rules(33): sensor_index_type__size >= 0 may_be_deduced.
+write_sensor_rules(34): sensor_index_type__first may_be_replaced_by 1.
+write_sensor_rules(35): sensor_index_type__last may_be_replaced_by 3.
+write_sensor_rules(36): sensor_index_type__base__first <= 
+     sensor_index_type__base__last may_be_deduced.
+write_sensor_rules(37): sensor_index_type__base__first <= 
+     sensor_index_type__first may_be_deduced.
+write_sensor_rules(38): sensor_index_type__base__last >= 
+     sensor_index_type__last may_be_deduced.
+write_sensor_rules(39): stack__size >= 0 may_be_deduced.
+write_sensor_rules(40): A = B may_be_deduced_from
+     [goal(checktype(A,stack)),
+      goal(checktype(B,stack)),
+      fld_data(A) = fld_data(B),
+      fld_pointer(A) = fld_pointer(B)].

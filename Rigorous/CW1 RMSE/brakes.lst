@@ -1,0 +1,55 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2012
+             Copyright (C) 2012 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 20-OCT-2016 02:03:38.02
+
+Line
+   1  package body Brakes
+   2  is
+   3  	State: boolean;
+   4  
+   5  	procedure Activate
+   6  	is
+   7  	begin
+   8  		State := true;
+   9  	end Activate;
+
++++        Flow analysis of subprogram Activate performed 
+           (information-flow mode): no errors found.
+
+  10  
+  11  	procedure Deactivate
+  12  	is
+  13  	begin
+  14  		State := false;
+  15  	end Deactivate;
+
++++        Flow analysis of subprogram Deactivate performed 
+           (information-flow mode): no errors found.
+
+  16  
+  17  	function Activated return Boolean
+  18  	is
+  19  	begin
+  20  		return State;
+  21  	end Activated;
+
++++        Flow analysis of subprogram Activated performed 
+           (information-flow mode): no errors found.
+
+  22  begin
+  23  	State := false;
+  24  end Brakes;
+
++++        Flow analysis of package initialization 
+           performed: no errors found.
+
+
+Note: Flow analysis mode is automatic
+
+
+--End of file--------------------------------------------------
